@@ -1,0 +1,22 @@
+<%= form_with(model: genre) do |f| %>
+  <% if genre.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(genre.errors.count, "error") %> prohibited this genre from being saved:</h2>
+
+      <ul>
+        <% genre.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name, style: "display: block" %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= f.submit 'Accept', class: "btn btn-outline-secondary mb-3"%>
+  </div>
+<% end %>

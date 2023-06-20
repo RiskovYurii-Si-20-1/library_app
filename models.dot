@@ -1,0 +1,15 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true, bgcolor="none"]
+	"ApplicationRecord" []
+	"Book" [shape=Mrecord, label="{Book|title :varchar\lauthor :varchar\lpublication_year :INTEGER\lgenre_id :INTEGER\lcreated_at :datetime(6)\lupdated_at :datetime(6)\limage_url :varchar\lid :INTEGER\l}"]
+	"Bookmark" [shape=Mrecord, label="{Bookmark|user_id :INTEGER\lbook_id :INTEGER\lcreated_at :datetime(6)\lupdated_at :datetime(6)\lid :INTEGER\l}"]
+	"Genre" [shape=Mrecord, label="{Genre|name :varchar\lcreated_at :datetime(6)\lupdated_at :datetime(6)\lid :INTEGER\l}"]
+	"Like" [shape=Mrecord, label="{Like|user_id :INTEGER\lbook_id :INTEGER\lcreated_at :datetime(6)\lupdated_at :datetime(6)\lid :INTEGER\l}"]
+	"User" [shape=Mrecord, label="{User|id :INTEGER\lemail :varchar\lencrypted_password :varchar\lreset_password_token :varchar\lreset_password_sent_at :datetime(6)\lremember_created_at :datetime(6)\lcreated_at :datetime(6)\lupdated_at :datetime(6)\ladmin :boolean\l}"]
+	"Book" -> "Genre" [arrowtail=crow, arrowhead=crow, dir=both color="#8F4B2B"]
+	"Book" -> "Like" [arrowtail=crow, arrowhead=crow, dir=both color="#8593F4"]
+	"Book" -> "Bookmark" [arrowtail=crow, arrowhead=crow, dir=both color="#CC6129"]
+	"Book" -> "User" [arrowtail=crow, arrowhead=crow, dir=both color="#972657"]
+	"Bookmark" -> "User" [arrowtail=crow, arrowhead=crow, dir=both color="#4BFAB8"]
+	"Like" -> "User" [arrowtail=crow, arrowhead=crow, dir=both color="#F1D8FE"]
+}

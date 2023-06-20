@@ -1,0 +1,88 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Genres</h1>
+
+<%= link_to "New genre", new_genre_path, class: "btn btn-outline-secondary mb-3" %>
+
+<!--<div id="genres">-->
+  <%# @genres.each do |genre| %>
+    <%#= render genre %>
+<!--    <p>-->
+      <%#= link_to "Show this genre", genre %>
+<!--    </p>-->
+  <%# end %>
+<!--</div>-->
+
+<%#= link_to "New genre", new_genre_path %>
+
+
+<div class="row row-cols-auto">
+
+  <% @genres.each do |genre| %>
+    <div class="col">
+      <div class="card mb-3" style="width: 18rem">
+        <div class="card-body">
+
+
+          <%# if current_user%>
+            <%# bookmark = current_user.bookmarks.find_by(genre: genre) %>
+            <%# if bookmark.nil? %>
+              <%#= button_to "Bookmark", bookmarks_path, params: { bookmark: { book_id: genre.id }}, method: :post, class: "btn btn-outline-secondary mb-3" %>
+            <%# else %>
+              <%#= button_to "Unbookmark", bookmark_path(bookmark), method: :delete, class: "btn btn-outline-secondary mb-3" %>
+            <%# end %>
+          <%# else %>
+          <%# end %>
+
+
+          <h5 class="card-title"> <strong><%= genre.name %></strong></h5>
+
+          <h6 class="card-subtitle mb-2 text-body-secondary" style="max-width: 200px;"></h6>
+
+
+          <%# if current_user%>
+<!--            <p class="card-text">Genre: <%#= link_to "Show this genre", genre.name, genre.genre %></p>-->
+          <%# else %>
+<!--            <p class="card-text"><%#= link_to "Edit genre", genre.name %></p>-->
+          <%# end %>
+          <div class="row">
+
+<%#= link_to "Show this genre", genre %>
+
+<!--            <div class="d-flex justify-content-end"></div>-->
+            <%# if current_user%>
+              <%# like = current_user.likes.find_by(book: book) %>
+              <%# if like.nil? %>
+                <%#= button_to "Like", likes_path, params: { like: { book_id: book.id }}, method: :post, class: "btn btn-outline-secondary mb-3" %>
+              <%# else %>
+                <%#= button_to "Unlike", like_path(like), method: :delete, class: "btn btn-outline-secondary mb-3" %>
+              <%# end %>
+            <%# else %>
+            <%# end %>
+
+
+            <%# if current_user%>
+              <%#= link_to "Edit this book", edit_book_path(book), class: "btn btn-outline-secondary mb-3" %>
+              <%#= button_to "Destroy this book", book, method: :delete, class: "btn btn-outline-secondary mb-3" %>
+            <%# end %>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Back to books", '/books', class: "btn btn-outline-secondary mb-3" %>
+
+
+
+
+
+
+<!--<div>-->
+  <%# current_user.bookmarks.each do |bookmark| %>
+    <%#= button_to bookmark.book.title, bookmark.book, class: "btn btn-outline-secondary mb-3" %>
+  <%# end %>
+<!--</div>-->

@@ -1,0 +1,7 @@
+digraph controllers_diagram {
+	graph[overlap=false, splines=true, bgcolor="none"]
+	"BookmarksController" [shape=Mrecord, label="{BookmarksController|destroy\lindex\lcreate\l|\l|_layout_from_proc\lbookmark_params\l_layout\l}"]
+	"BooksController" [shape=Mrecord, label="{BooksController|destroy\ledit\lindex\lnew\lshow\lupdate\lcreate\l|\l|_layout_from_proc\lbook_params\lset_book\lset_genres\l_layout\l}"]
+	"GenresController" [shape=Mrecord, label="{GenresController|destroy\ledit\lindex\lnew\lshow\lupdate\lcreate\l|\l|_layout_from_proc\lgenre_params\lset_genre\l_layout\l}"]
+	"LikesController" [shape=Mrecord, label="{LikesController|destroy\lcreate\l|\l|_layout_from_proc\llike_params\l_layout\l}"]
+}
